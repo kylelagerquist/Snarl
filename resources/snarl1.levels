@@ -1,0 +1,44 @@
+1
+
+{ "type": "level",
+  "rooms": [ { "type": "room",
+               "origin": [ 0, 0 ],
+               "bounds": { "rows": 5, "columns": 8 },
+               "layout": [ [ 0, 0, 0, 0, 0, 0, 0, 0],
+                           [ 0, 1, 1, 1, 1, 1, 1, 0],
+                           [ 0, 1, 1, 1, 1, 1, 1, 0],
+                           [ 0, 1, 1, 1, 1, 1, 1, 0],
+                           [ 0, 0, 0, 0, 0, 0, 0, 0] ] }],
+  "objects": [ { "type": "key", "position": [ 2, 1 ] },
+               { "type": "exit", "position": [ 2, 6] } ],
+  "hallways": [ ]
+}
+
+{ "type": "level",
+  "rooms": [ { "type": "room",
+               "origin": [ 0, 0 ],
+               "bounds": { "rows": 5, "columns": 8 },
+               "layout": [ [ 0, 0, 0, 0, 0, 0, 0, 0],
+                           [ 0, 1, 1, 1, 1, 1, 1, 0],
+                           [ 0, 1, 1, 1, 1, 1, 1, 0],
+                           [ 0, 1, 1, 1, 1, 1, 1, 0],
+                           [ 0, 0, 0, 0, 0, 0, 0, 0] ] }],
+  "objects": [ { "type": "key", "position": [ 2, 1 ] },
+               { "type": "exit", "position": [ 2, 6] } ],
+  "hallways": [ ]
+}
+
+{ "type": "level",
+  "rooms": [ { "type": "room",
+               "origin": [ 0, 0 ],
+               "bounds": { "rows": 6, "columns": 8 },
+               "layout": [ [ 0, 0, 0, 0, 0, 0, 0, 0],
+                           [ 0, 1, 1, 1, 1, 1, 1, 0],
+                           [ 0, 1, 1, 1, 1, 1, 1, 0],
+                           [ 0, 1, 1, 1, 1, 1, 1, 0],
+                           [ 0, 1, 1, 1, 1, 1, 1, 0],
+                           [ 0, 0, 0, 0, 0, 0, 0, 0] ] }],
+  "objects": [ { "type": "key", "position": [ 2, 1 ] },
+               { "type": "exit", "position": [ 2, 6] } ],
+  "hallways": [ ]
+}

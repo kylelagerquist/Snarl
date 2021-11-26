@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+
+import argparse
+
+from src.Remote.server import Server
+from src.utils import parse_levels
+
+if __name__ == '__main__':
+	# Create the command line parser
+	parser = argparse.ArgumentParser(allow_abbrev=False)
+	parser.add_argument("--levels", type=str,
+						help="File containing JSON level specs", default='snarl.levels')
+	parser.add_argument("--clients", type=int, help="Max clients to connect",
+						choices=[1, 2, 3, 4], default=4)
+	parser.add_argument("--wait", type=int,
+						help="Second to wait for next connection", default=60)
+	parser.add_argument("--observe", action='store_true', 
+						help="Whether to show observer view")
+	parser.add_argument("--address", type=str,
+						help="IP address to connect to", default='127.0.0.1')
+	parser.add_argument("--port", type=int, help="Port number to connect to",
+						default=45678)
+	parser.add_argument("--combat", action='store_true', 
+						help="Whether to use combat system")
+	parser.add_argument("--games", type=int, help="Max games to run",
+						default=1)
+	parser.add_argument("--remote_adv", action='store_true', 
+						help="Whether to allow for remote adversaries")
+	args = parser.parse_args()
+
+	# Parse all of the level JSONs
+	try:
+		levels = parse_levels(args.levels)
+	except:
+		print('Error parsing levels.')
+
+	s = Server(
+		host=args.address, 
+		port=args.port, 
+		levels=levels, 
+		max_players=args.clients, 
+		timeout=args.wait, 
+		combat=args.combat,
+		max_games=args.games, 
+		remote_adversaries=args.remote_adv, 
+		observe=args.observe)
+
+	s.run()
+
+
